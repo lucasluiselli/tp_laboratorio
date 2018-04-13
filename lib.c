@@ -3,14 +3,18 @@
 #include <stdlib.h>
 
 
-
+/** \brief: Funcion que recibe dos parametro, realiza la suma y devuelve el resultado.
+ *
+ * \param num1 int --> parametro ingresado a la funcion.
+ * \param num2 int --> parametro ingresado a la funcion.
+ * \param Suma int* --> variable parametro de tipo puntero.
+ * \return retorno int --> variable usada para validar la operacion.
+ *
+ */
 
 int Sumar(int num1, int num2, int *suma)
 {
 
-
-//int num1;
-//int num2;
 int resultado;
 int retorno;
 
@@ -19,152 +23,158 @@ resultado=num1 + num2;
     if (resultado < -32768 || resultado > 32767)
     {
         retorno = -1;
-        printf("El resultado es superior a los valores permitidos");
-
+        printf("\nEl resultado es superior a los valores permitidos");
     }
     else
     {
         retorno = 0;
         *suma = resultado;
-
     }
 
-
 return retorno;
-
 
 }
 
 
+/** \brief: Funcion que recibe dos parametro, realiza la resta y devuelve el resultado.
+ *
+ * \param num1 int --> parametro ingresado a la funcion.
+ * \param num2 int --> parametro ingresado a la funcion.
+ * \param resta int* --> variable parametro de tipo puntero.
+ * \return retorno int --> variable usada para validar la operacion.
+ *
+ */
 
-int Restar(int numUno, int numDos, int *resta)
+int Restar(int num1, int num2, int *resta)
 {
-//int numeroUno;
-//int numeroDos;
+
 int resultado;
 int retorno;
 
-resultado= numUno - numDos;
+resultado= num1 - num2;
 
     if (resultado < -32768 || resultado > 32767)
     {
         retorno = -1;
-        printf("El resultado es superior a los valores permitidos");
+        printf("\nEl resultado es superior a los valores permitidos");
 
     }
     else
     {
         retorno = 0;
         *resta=resultado;
-
     }
-
-
 return retorno;
-
-
 }
 
 
 
-
-
-
-
+/** \brief: Funcion que recibe dos parametro, realiza la multiplicacion y devuelve el resultado.
+ *
+ * \param num1 int --> parametro ingresado a la funcion.
+ * \param num2 int --> parametro ingresado a la funcion.
+ * \param mult int* --> variable parametro de tipo puntero.
+ * \return retorno int --> variable usada para validar la operacion.
+ *
+ */
 
 
 int Multiplicar(int num1, int num2, int *mult)
 {
-int numeroUno;
-int numeroDos;
+
 int resultado;
 int retorno;
 
-resultado=numeroUno * numeroDos;
+resultado=num1 * num2;
 
     if (resultado < -32768 || resultado > 32767)
     {
         retorno = -1;
-        printf("El resultado es superior a los valores permitidos");
+        printf("\nEl resultado es superior a los valores permitidos");
 
     }
     else
     {
         retorno = 0;
         *mult = resultado;
-
     }
-
 
 return retorno;
 
-
 }
 
+/** \brief: Funcion que recibe dos parametro, realiza la division y devuelve el resultado.
+ *
+ * \param num1 int --> parametro ingresado a la funcion.
+ * \param num2 int --> parametro ingresado a la funcion.
+ * \param division int* --> variable parametro de tipo puntero.
+ * \return retorno int --> variable usada para validar la operacion.
+ *
+ */
 
 
-
-int Dividir(int num1, int num2, int *division)
+int Dividir(float num1, int num2, float *division)
 {
-int numeroUno;
-int numeroDos;
+
 float resultado;
 int retorno;
 
-resultado=numeroUno / numeroDos;
 
-    if (numeroDos <= 0 )
+
+    if (num2 == 0 )
     {
         retorno = -1;
-        printf("El divisor no es un valor permitido");
+        printf("\nEl divisor no es un valor permitido");
 
     }
     else
     {
+        resultado=num1 / num2;
         retorno = 0;
         *division = resultado;
-
     }
 
 
 return retorno;
 
-
-
-
-
 }
 
 
 
+/** \brief Funcion que recibe un parametro, realiza el factorial y devuelve el resultado.
+ *
+ * \param num1 int --> parametro ingresado a la funcion.
+ * \param factorial int*--->variable parametro de tipo puntero.
+ * \return retorno int ---> variable usada para validar la operacion.
+ *
+ */
 
 
-int Factorial(int num1,int *factorial)
+int Factorial(int num1,long *factorial)
 {
-int numeroUno;
-int resultado;
+
+
 int retorno;
 int i;
 
-    for(i=1;i<numeroUno;i++)
-    {
-         *factorial= *factorial * i;
 
 
-        if (numeroUno == 0 )
+        if (num1 == 0 )
         {
             retorno = -1;
-            printf("El factorial de cero es cero");
+            printf("\n Operacion incorrecta");
 
         }
         else
         {
+            for(i=num1;i>1;i--)
+            {
+                num1=num1 * (i-1);
+                *factorial =  num1;
+            }
             retorno = 0;
-            *factorial = resultado;
-
         }
 
-    }
 return retorno;
 
 }
