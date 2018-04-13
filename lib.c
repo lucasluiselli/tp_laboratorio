@@ -24,14 +24,19 @@ resultado=num1 + num2;
     {
         retorno = -1;
         printf("\nEl resultado es superior a los valores permitidos");
+
+
     }
     else
     {
         retorno = 0;
         *suma = resultado;
+
     }
 
+
 return retorno;
+
 
 }
 
@@ -63,8 +68,13 @@ resultado= num1 - num2;
     {
         retorno = 0;
         *resta=resultado;
+
     }
+
+
 return retorno;
+
+
 }
 
 
@@ -97,9 +107,12 @@ resultado=num1 * num2;
     {
         retorno = 0;
         *mult = resultado;
+
     }
 
+
 return retorno;
+
 
 }
 
@@ -132,10 +145,15 @@ int retorno;
         resultado=num1 / num2;
         retorno = 0;
         *division = resultado;
+
     }
 
 
 return retorno;
+
+
+
+
 
 }
 
